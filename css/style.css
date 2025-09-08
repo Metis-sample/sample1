@@ -343,6 +343,22 @@ h1, h2, h3, h4 {
     transform: translateY(0);
 }
 
+/* About and Services Image Animations */
+.about-image,
+.services-image,
+.service-detail-image {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.about-image.loaded,
+.services-image.loaded,
+.service-detail-image.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .about-image img,
 .services-image img,
 .service-detail-image img {
@@ -352,10 +368,16 @@ h1, h2, h3, h4 {
     transition: transform var(--transition-fast);
 }
 
-.about-image img:hover,
-.services-image img:hover,
-.service-detail-image img:hover {
+.about-image:hover,
+.services-image:hover,
+.service-detail-image:hover {
     transform: scale(1.02);
+}
+
+.about-image:hover img,
+.services-image:hover img,
+.service-detail-image:hover img {
+    transform: scale(1.05);
 }
 
 /* Services Section - FIXED LAYOUT */
